@@ -6,6 +6,9 @@
 ###### After Docker had finished the builds, go to browser and
 ###### http://localhost:8080
 
+### Docker orchestration
+![MFE Todo List](https://i.ibb.co/Sw5rXSN/image.png)
+
 # mfe-assesment
 ![MFE Todo List](https://i.ibb.co/mJZCdpX/image.png)
 
