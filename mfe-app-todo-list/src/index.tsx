@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import TodoList from "./Todo-list/TodoList";
+import TodoList from './TodoList/TodoList';
 import TodoListProps from "./types"
 
 const container = document.getElementById('root');

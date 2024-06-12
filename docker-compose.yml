@@ -2,19 +2,40 @@ version: '3'
 
 services:
   container:
-    build: ./container-todo
-    ports:
+    build: 
+      context: .
+      dockerfile: container-todo/Dockerfile
+    image: react-container-todo
+    container_name: react-container-todo
+    entrypoint: sh -c "npm install && npm start" #entrypoint will execute npm install inside the container and outside the image. The container  is visible outside and is mutable
+    ports:                                       # the image is blinded like a black box.
       - "8080:8080"
+    volumes:
+      - ./container-todo:/usr/src/app #the volumes here will copy all . from container-todo folder to /usr/src/app. This is the reason that is not needed to copy the files inside the Docker (image file)
     depends_on:
       - mfe-app-todo-create
       - mfe-app-todo-list
 
   mfe-app-todo-create:
-    build: ./mfe-app-todo-create
-    ports:
+    build: 
+      context: .
+      dockerfile: mfe-app-todo-create/Dockerfile
+    image: react-mfe-create-todo
+    container_name: react-mfe-create-todo
+    entrypoint: sh -c "npm install && npm start" #entrypoint will execute npm install inside the container and outside the image. The container  is visible outside and is mutable
+    ports:                                       # the image is blinded like a black box.
       - "8081:8081"
+    volumes:
+      - ./mfe-app-todo-create:/usr/src/app
 
   mfe-app-todo-list:
-    build: ./mfe-app-todo-list
-    ports:
+    build: 
+      context: .
+      dockerfile: mfe-app-todo-list/Dockerfile
+    image: react-mfe-list-todo
+    container_name: react-mfe-list-todo
+    entrypoint: sh -c "npm install && npm start" #entrypoint will execute npm install inside the container and outside the image. The container  is visible outside and is mutable
+    ports:                                       # the image is blinded like a black box.
       - "8082:8082"
+    volumes:
+      - ./mfe-app-todo-list:/usr/src/app

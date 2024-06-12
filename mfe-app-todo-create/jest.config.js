@@ -1,10 +1,18 @@
+const path = require('path');
+
 module.exports = {
-    testEnvironment: 'jsdom',
-    moduleNameMapper: {
-      '\\.(css|less|scss|sass)$': 'identity-obj-proxy', // Handle CSS imports
-    },
-    transform: {
-      '^.+\\.jsx?$': 'babel-jest'
-    }
-  };
-  
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
+  roots: ['<rootDir>/src'],
+  transform: {
+    '^.+\\.(ts|tsx)?$': 'ts-jest',
+    '^.+\\.(js|jsx)$': 'babel-jest'
+  },
+  moduleNameMapper: {
+    '^mfe_app_list/ListApp$':
+      path.resolve(__dirname, '..') +
+      '/mfe-app-todo-list/src/TodoList/TodoList.tsx'
+  },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  testPathIgnorePatterns: ['/node_modules/']
+};

@@ -1,2 +1,2 @@
-import ('./bootstrap')
-export {}
+import('./BootStrap');
+export {};
