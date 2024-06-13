@@ -3,8 +3,3 @@ declare module 'mfe_app_create/CreateApp' {
     export default CreateTodo;
   }
   
-  declare module 'mfe_app_list/ListApp' {
-    const ListTodos: React.ComponentType;
-    export default ListTodos;
-  }
-  

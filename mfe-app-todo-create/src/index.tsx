@@ -1,9 +1,6 @@
 
 import React from 'react';
 import TodoCreate from './TodoCreate/TodoCreate';
-import ReactDOM from 'react-dom/client';
-
-const container = document.getElementById('root');
 
 const CreateApp = () => (
   <>
@@ -13,10 +10,5 @@ const CreateApp = () => (
     <TodoCreate />
   </>
 );
-
-if (container) {
-    const root = ReactDOM.createRoot(container);
-    root.render(<CreateApp />)
-}
 
 export default CreateApp
